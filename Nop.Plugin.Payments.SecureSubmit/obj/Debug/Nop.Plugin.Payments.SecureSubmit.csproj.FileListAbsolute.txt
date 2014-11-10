@@ -1,0 +1,13 @@
+C:\code\nopcommerce\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Views\PaymentSecureSubmit\Configure.cshtml
+C:\code\nopcommerce\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Views\PaymentSecureSubmit\PaymentInfo.cshtml
+C:\code\nopcommerce\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\web.config
+C:\code\nopcommerce\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Description.txt
+C:\code\nopcommerce\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\lib\SecureSubmit.dll
+C:\code\nopcommerce\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\lib\SecureSubmit.pdb
+C:\code\nopcommerce\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\logo.jpg
+C:\code\nopcommerce\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Nop.Plugin.Payments.SecureSubmit.dll.config
+C:\code\nopcommerce\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Nop.Plugin.Payments.SecureSubmit.dll
+C:\code\nopcommerce\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Nop.Plugin.Payments.SecureSubmit.pdb
+C:\code\nopcommerce\Plugins\Nop.Plugin.Payments.SecureSubmit\obj\Debug\Nop.Plugin.Payments.SecureSubmit.csprojResolveAssemblyReference.cache
+C:\code\nopcommerce\Plugins\Nop.Plugin.Payments.SecureSubmit\obj\Debug\Nop.Plugin.Payments.SecureSubmit.dll
+C:\code\nopcommerce\Plugins\Nop.Plugin.Payments.SecureSubmit\obj\Debug\Nop.Plugin.Payments.SecureSubmit.pdb

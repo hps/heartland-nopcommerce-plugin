@@ -1,0 +1,119 @@
+﻿@{
+    Layout = "";
+}
+
+@model Nop.Plugin.Payments.SecureSubmit.Models.PaymentInfoModel
+@using Nop.Web.Framework;
+
+<script type="text/javascript" src="https://securesubmit.github.io/js/secure.submit-1.1.1.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var orig = $('.payment-info-next-step-button').first().attr('onclick');
+
+        if (typeof orig == 'undefined') {
+            var form = $('div .payment-info form');
+            form.on("submit", function () {
+                submit_payment();
+                return false;
+            });
+        } else {
+            if (orig != 'submit_payment();') {
+                $('.payment-info-next-step-button').first().attr('onclick', 'submit_payment();');
+                original_function = orig;
+            }
+        }
+    });
+
+    function submit_payment() {
+        if ($('#securesubmit_payment_method').length) {
+            tokenizeCard();
+        } else {
+            return eval(original_function);
+        }
+    }
+
+    function secureSubmitResponseHandler(response) {
+        if (response.message) {
+            alert(response.message);
+            $('.payment-info-next-step-button').removeAttr("disabled");
+        } else {
+            var token = response.token_value;
+
+            if (typeof original_function == 'undefined') {
+                $('.payment-info-next-step-button').removeAttr("disabled");
+                var button = $('.payment-info-next-step-button');
+                var form = $('div .payment-info form');
+                form.append("<input type='hidden' name='nextstep' value='Next'/>");
+                $('#token_value').remove(); // first we need to remove the token before we blindly add it again.
+                form.append("<input type='hidden' id='token_value' name='token_value' value='" + token + "'/>");
+                form.get(0).submit();
+            } else {
+                var form = $('#co-payment-info-form');
+                $('#token_value').remove(); // first we need to remove the token before we blindly add it again.
+                form.append("<input type='hidden' id='token_value' name='token_value' value='" + token + "'/>");
+                eval(original_function);
+            }
+        }
+    }
+
+    function tokenizeCard() {
+        $('.payment-info-next-step-button').attr("disabled", "disabled");
+
+        hps.tokenize({
+            data: {
+                public_key: '@Model.PublicApiKey',
+                number: $('#card_number').val(),
+                exp_month: $('#ExpireMonth').val(),
+                exp_year: $('#ExpireYear').val(),
+                cvc: $('#card_cvc').val()
+            },
+            success: function (response) {
+                secureSubmitResponseHandler(response);
+            },
+            error: function (response) {
+                secureSubmitResponseHandler(response);
+            }
+        });
+    }
+</script>
+
+<table id="securesubmit_payment_method" width="100%" cellspacing="2" cellpadding="1" border="0">
+        <tr>
+            <td class="adminTitle">
+	            @Html.NopLabelFor(model => model.CardNumber)
+            </td>
+            <td class="adminData">
+			    <input autocomplete="off" id="card_number" style="Width: 150px;" type="text" value="">
+				<span class="field-validation-error" id="card_number_error"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+	            @Html.NopLabelFor(model => model.ExpireMonth)
+            </td>
+            <td class="adminData">
+                @Html.DropDownListFor(model => model.ExpireMonth, Model.ExpireMonths)
+                /
+                @Html.DropDownListFor(model => model.ExpireYear, Model.ExpireYears)
+				<span class="field-validation-error" id="exp_month_error"></span>
+				<span class="field-validation-error" id="exp_year_error"></span>
+			</td>
+
+		</tr>
+		<tr>
+            <td class="adminTitle">
+	            @Html.NopLabelFor(model => model.CardCode)
+            </td>
+            <td class="adminData">
+			    <input autocomplete="off" id="card_cvc" style="Width: 50px;" type="text">
+				<span class="field-validation-error" id="card_cvc_error"></span>
+			</td>
+        </tr>	
+		<tr>
+		    <td colspan="2">
+				<span class="field-validation-error" id="error_message"></span>
+			</td>
+		</tr>
+
+</table>

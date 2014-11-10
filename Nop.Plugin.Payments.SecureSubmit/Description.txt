@@ -1,0 +1,8 @@
+﻿Group: Payment methods
+FriendlyName: Credit Card
+SystemName: Payments.SecureSubmit
+Version: 1.00
+SupportedVersions: 3.40
+Author: Heartland Payment Systems
+DisplayOrder: 1
+FileName: Nop.Plugin.Payments.SecureSubmit.dll
