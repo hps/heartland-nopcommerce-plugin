@@ -21,7 +21,7 @@ using Nop.Services.Security;
 
 using Nop.Plugin.Payments.SecureSubmit.Controllers;
 using SecureSubmit.Services;
-using SecureSubmit.Services.Credit;
+//using SecureSubmit.Services.Credit;
 using SecureSubmit.Entities;
 using SecureSubmit.Infrastructure;
 
@@ -67,6 +67,18 @@ namespace Nop.Plugin.Payments.SecureSubmit
         #endregion
 
         #region Methods
+
+
+        /// <summary>
+        /// HidePaymentsMethods
+        /// </summary>
+        /// <param name="ShoppingCartItems">A Nop.Core iList of objects that are items in the shopping cart</param>
+        /// <returns>Process payment result</returns>1
+        public bool HidePaymentMethod(IList<Nop.Core.Domain.Orders.ShoppingCartItem> shoppingCartItems)
+        {
+            return (false);
+        }
+
 
         /// <summary>
         /// Process a payment
