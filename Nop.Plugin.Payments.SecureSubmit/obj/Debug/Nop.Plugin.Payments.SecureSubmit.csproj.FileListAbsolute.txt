@@ -11,3 +11,29 @@ C:\code\nopcommerce\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Nop.Plugi
 C:\code\nopcommerce\Plugins\Nop.Plugin.Payments.SecureSubmit\obj\Debug\Nop.Plugin.Payments.SecureSubmit.csprojResolveAssemblyReference.cache
 C:\code\nopcommerce\Plugins\Nop.Plugin.Payments.SecureSubmit\obj\Debug\Nop.Plugin.Payments.SecureSubmit.dll
 C:\code\nopcommerce\Plugins\Nop.Plugin.Payments.SecureSubmit\obj\Debug\Nop.Plugin.Payments.SecureSubmit.pdb
+C:\Users\chris.koerner\Code\Carts & Plugins\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Views\PaymentSecureSubmit\Configure.cshtml
+C:\Users\chris.koerner\Code\Carts & Plugins\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Views\PaymentSecureSubmit\PaymentInfo.cshtml
+C:\Users\chris.koerner\Code\Carts & Plugins\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\web.config
+C:\Users\chris.koerner\Code\Carts & Plugins\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\lib\SecureSubmit.dll
+C:\Users\chris.koerner\Code\Carts & Plugins\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\lib\SecureSubmit.pdb
+C:\Users\chris.koerner\Code\Carts & Plugins\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\logo.jpg
+C:\Users\chris.koerner\Code\Carts & Plugins\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Description.txt
+C:\Users\chris.koerner\Code\Carts & Plugins\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Nop.Plugin.Payments.SecureSubmit.dll.config
+C:\Users\chris.koerner\Code\Carts & Plugins\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Nop.Plugin.Payments.SecureSubmit.dll
+C:\Users\chris.koerner\Code\Carts & Plugins\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Nop.Plugin.Payments.SecureSubmit.pdb
+C:\Users\chris.koerner\Code\Carts & Plugins\heartland-nopcommerce-plugin\Nop.Plugin.Payments.SecureSubmit\obj\Debug\Nop.Plugin.Payments.SecureSubmit.csprojResolveAssemblyReference.cache
+C:\Users\chris.koerner\Code\Carts & Plugins\heartland-nopcommerce-plugin\Nop.Plugin.Payments.SecureSubmit\obj\Debug\Nop.Plugin.Payments.SecureSubmit.dll
+C:\Users\chris.koerner\Code\Carts & Plugins\heartland-nopcommerce-plugin\Nop.Plugin.Payments.SecureSubmit\obj\Debug\Nop.Plugin.Payments.SecureSubmit.pdb
+C:\Code\Plugins\Nop.Plugin.Payments.SecureSubmit\obj\Debug\Nop.Plugin.Payments.SecureSubmit.dll
+C:\Code\Plugins\Nop.Plugin.Payments.SecureSubmit\obj\Debug\Nop.Plugin.Payments.SecureSubmit.pdb
+C:\Code\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Views\PaymentSecureSubmit\Configure.cshtml
+C:\Code\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Views\PaymentSecureSubmit\PaymentInfo.cshtml
+C:\Code\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\web.config
+C:\Code\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\lib\SecureSubmit.dll
+C:\Code\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\lib\SecureSubmit.pdb
+C:\Code\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\logo.jpg
+C:\Code\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Description.txt
+C:\Code\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Nop.Plugin.Payments.SecureSubmit.dll.config
+C:\Code\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Nop.Plugin.Payments.SecureSubmit.dll
+C:\Code\Presentation\Nop.Web\Plugins\Payments.SecureSubmit\Nop.Plugin.Payments.SecureSubmit.pdb
+C:\Code\Plugins\Nop.Plugin.Payments.SecureSubmit\obj\Debug\Nop.Plugin.Payments.SecureSubmit.csprojResolveAssemblyReference.cache
