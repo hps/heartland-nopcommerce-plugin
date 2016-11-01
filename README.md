@@ -14,7 +14,7 @@ Use the directory based on the installation method you would like to use:
 
 ####Project Addition Method
 
-Copy the 'Nop.Plugin.Payments.SecureSubmit' directory into the Nop Plugin directory. Load the NOP solution, right click on the solution and select ADD > EXISTING PROJECT..	selecting the secure submit project file. Build the soltuion.
+Copy the 'Nop.Plugin.Payments.SecureSubmit' directory into the Nop Plugin directory. Load the NOP solution, right click on the solution and select ADD > EXISTING PROJECT..	selecting the secure submit project file. Build the solution.
 
 ####Minimal Files Method
 
