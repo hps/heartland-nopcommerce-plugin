@@ -99,7 +99,7 @@ namespace Nop.Plugin.Payments.SecureSubmit
             cardHolder.Address.Address = customer.BillingAddress.Address1;
             cardHolder.Address.City = customer.BillingAddress.City;
             cardHolder.Address.State = customer.BillingAddress.StateProvince.Abbreviation;
-            cardHolder.Address.Zip = customer.BillingAddress.ZipPostalCode.Replace("-", "");
+            cardHolder.Address.Zip = customer.BillingAddress.ZipPostalCode.Replace("-", "").Replace(" ", "");
             cardHolder.Address.Country = customer.BillingAddress.Country.ThreeLetterIsoCode;
 
             HpsAuthorization response = null;
