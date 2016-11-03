@@ -217,7 +217,7 @@ namespace Nop.Plugin.Payments.SecureSubmit
                 creditService.Refund(
                     refundPaymentRequest.AmountToRefund, 
                     _currencyService.GetCurrencyById(_currencySettings.PrimaryStoreCurrencyId).CurrencyCode, 
-                    refundPaymentRequest.Order.CaptureTransactionId);
+                    Int32.Parse(refundPaymentRequest.Order.CaptureTransactionId));
 
                 var isOrderFullyRefunded = (refundPaymentRequest.AmountToRefund + refundPaymentRequest.Order.RefundedAmount == refundPaymentRequest.Order.OrderTotal);
                 result.NewPaymentStatus = isOrderFullyRefunded ? PaymentStatus.Refunded : PaymentStatus.PartiallyRefunded;
