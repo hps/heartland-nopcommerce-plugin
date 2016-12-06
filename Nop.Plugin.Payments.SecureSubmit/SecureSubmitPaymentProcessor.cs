@@ -99,7 +99,7 @@ namespace Nop.Plugin.Payments.SecureSubmit
             cardHolder.Address.Address = customer.BillingAddress.Address1;
             cardHolder.Address.City = customer.BillingAddress.City;
             cardHolder.Address.State = customer.BillingAddress.StateProvince.Abbreviation;
-            cardHolder.Address.Zip = customer.BillingAddress.ZipPostalCode.Replace("-", "");
+            cardHolder.Address.Zip = customer.BillingAddress.ZipPostalCode.Replace("-", "").Replace(" ", "");
             cardHolder.Address.Country = customer.BillingAddress.Country.ThreeLetterIsoCode;
 
             HpsAuthorization response = null;
@@ -217,7 +217,7 @@ namespace Nop.Plugin.Payments.SecureSubmit
                 creditService.Refund(
                     refundPaymentRequest.AmountToRefund, 
                     _currencyService.GetCurrencyById(_currencySettings.PrimaryStoreCurrencyId).CurrencyCode, 
-                    refundPaymentRequest.Order.CaptureTransactionId);
+                    Int32.Parse(refundPaymentRequest.Order.CaptureTransactionId));
 
                 var isOrderFullyRefunded = (refundPaymentRequest.AmountToRefund + refundPaymentRequest.Order.RefundedAmount == refundPaymentRequest.Order.OrderTotal);
                 result.NewPaymentStatus = isOrderFullyRefunded ? PaymentStatus.Refunded : PaymentStatus.PartiallyRefunded;
