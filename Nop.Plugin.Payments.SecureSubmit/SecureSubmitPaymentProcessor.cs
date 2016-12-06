@@ -18,10 +18,8 @@ using Nop.Services.Localization;
 using Nop.Services.Orders;
 using Nop.Services.Payments;
 using Nop.Services.Security;
-
 using Nop.Plugin.Payments.SecureSubmit.Controllers;
 using SecureSubmit.Services;
-using SecureSubmit.Services.Credit;
 using SecureSubmit.Entities;
 using SecureSubmit.Infrastructure;
 
@@ -69,6 +67,16 @@ namespace Nop.Plugin.Payments.SecureSubmit
         #region Methods
 
         /// <summary>
+        /// HidePaymentsMethods
+        /// </summary>
+        /// <param name="ShoppingCartItems">A Nop.Core iList of objects that are items in the shopping cart</param>
+        /// <returns>boolean</returns>
+        public bool HidePaymentMethod(IList<Nop.Core.Domain.Orders.ShoppingCartItem> shoppingCartItems)
+        {
+            return (false);
+        }
+
+        /// <summary>
         /// Process a payment
         /// </summary>
         /// <param name="processPaymentRequest">Payment info required for an order processing</param>
@@ -91,7 +99,7 @@ namespace Nop.Plugin.Payments.SecureSubmit
             cardHolder.Address.Address = customer.BillingAddress.Address1;
             cardHolder.Address.City = customer.BillingAddress.City;
             cardHolder.Address.State = customer.BillingAddress.StateProvince.Abbreviation;
-            cardHolder.Address.Zip = customer.BillingAddress.ZipPostalCode.Replace("-", "");
+            cardHolder.Address.Zip = customer.BillingAddress.ZipPostalCode.Replace("-", "").Replace(" ", "");
             cardHolder.Address.Country = customer.BillingAddress.Country.ThreeLetterIsoCode;
 
             HpsAuthorization response = null;
@@ -209,7 +217,7 @@ namespace Nop.Plugin.Payments.SecureSubmit
                 creditService.Refund(
                     refundPaymentRequest.AmountToRefund, 
                     _currencyService.GetCurrencyById(_currencySettings.PrimaryStoreCurrencyId).CurrencyCode, 
-                    refundPaymentRequest.Order.CaptureTransactionId);
+                    Int32.Parse(refundPaymentRequest.Order.CaptureTransactionId));
 
                 var isOrderFullyRefunded = (refundPaymentRequest.AmountToRefund + refundPaymentRequest.Order.RefundedAmount == refundPaymentRequest.Order.OrderTotal);
                 result.NewPaymentStatus = isOrderFullyRefunded ? PaymentStatus.Refunded : PaymentStatus.PartiallyRefunded;

@@ -6,67 +6,79 @@
 @using Nop.Web.Framework;
 @Html.Action("StoreScopeConfiguration", "Setting", new { area = "Admin" })
 @using (Html.BeginForm())
+
 {
-    <table class="adminContent">
-        <tr>
-            <td colspan="2">
-                <b>@T("Plugins.Payments.SecureSubmit.Notes")</b>
-            </td>
-        </tr>
-        <tr>
-            <td class="adminTitle">
-                @Html.OverrideStoreCheckboxFor(model => model.TransactModeId_OverrideForStore, model => model.TransactModeId, Model.ActiveStoreScopeConfiguration)
-                @Html.NopLabelFor(model => model.TransactModeValues):
-            </td>
-            <td class="adminData">
-                @Html.DropDownList("TransactModeId", Model.TransactModeValues)
-            </td>
-        </tr>
-        <tr>
-            <td class="adminTitle">
-                @Html.OverrideStoreCheckboxFor(model => model.PublicApiKey_OverrideForStore, model => model.PublicApiKey, Model.ActiveStoreScopeConfiguration)
-                @Html.NopLabelFor(model => model.PublicApiKey):
-            </td>
-            <td class="adminData">
-                @Html.EditorFor(model => model.PublicApiKey)
-                @Html.ValidationMessageFor(model => model.PublicApiKey)
-            </td>
-        </tr>
-        <tr>
-            <td class="adminTitle">
-                @Html.OverrideStoreCheckboxFor(model => model.SecretApiKey_OverrideForStore, model => model.SecretApiKey, Model.ActiveStoreScopeConfiguration)
-                @Html.NopLabelFor(model => model.SecretApiKey):
-            </td>
-            <td class="adminData">
-                @Html.EditorFor(model => model.SecretApiKey)
-                @Html.ValidationMessageFor(model => model.SecretApiKey)
-            </td>
-        </tr>
-        <tr>
-            <td class="adminTitle">
-                @Html.OverrideStoreCheckboxFor(model => model.AdditionalFee_OverrideForStore, model => model.AdditionalFee, Model.ActiveStoreScopeConfiguration)
-                @Html.NopLabelFor(model => model.AdditionalFee):
-            </td>
-            <td class="adminData">
-                @Html.EditorFor(model => model.AdditionalFee)
-                @Html.ValidationMessageFor(model => model.AdditionalFee)
-            </td>
-        </tr>
-        <tr>
-            <td class="adminTitle">
-                @Html.OverrideStoreCheckboxFor(model => model.AdditionalFeePercentage_OverrideForStore, model => model.AdditionalFeePercentage, Model.ActiveStoreScopeConfiguration)
-                @Html.NopLabelFor(model => model.AdditionalFeePercentage):
-            </td>
-            <td class="adminData">
-                @Html.EditorFor(model => model.AdditionalFeePercentage)
-                @Html.ValidationMessageFor(model => model.AdditionalFeePercentage)
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
+    @Html.AntiForgeryToken();
+
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>
+                    <b>Thanks for using Heartland's Secure Submit Payment Method!</b><br />
+                    <br />
+                    You can obtain the API Keys quickly by:<br />
+                    <br />
+                    1. Sign up on our <a href="https://developer.heartlandpaymentsystems.com/securesubmit">Developer Portal</a>.<br />
+                    2. Click on the menu link in the top right and select <a href="https://developer.heartlandpaymentsystems.com/Account/KeysAndCredentials">API Keys & Credentials</a>.<br />
+                    3. Copy and paste your keys into the appropriate boxes below.<br />
+                    <br />
+                    If you have any questions please <a href="mailto:entapp_devportal@e-hps.com">email us</a>!<br />
+                    <br />
+                    <b>@T("Plugins.Payments.SecureSubmit.Notes")</b>
+                </p>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.TransactModeId_OverrideForStore, model => model.TransactModeId, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.TransactModeValues)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DropDownList("TransactModeId", Model.TransactModeValues)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.PublicApiKey_OverrideForStore, model => model.PublicApiKey, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.PublicApiKey)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.PublicApiKey)
+                        @Html.ValidationMessageFor(model => model.PublicApiKey)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.SecretApiKey_OverrideForStore, model => model.SecretApiKey, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.SecretApiKey)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.SecretApiKey)
+                        @Html.ValidationMessageFor(model => model.SecretApiKey)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.AdditionalFee_OverrideForStore, model => model.AdditionalFee, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.AdditionalFee)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.AdditionalFee)
+                        @Html.ValidationMessageFor(model => model.AdditionalFee)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.AdditionalFeePercentage_OverrideForStore, model => model.AdditionalFeePercentage, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.AdditionalFeePercentage)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.AdditionalFeePercentage)
+                        @Html.ValidationMessageFor(model => model.AdditionalFeePercentage)
+                    </div>
+                </div>
+                <br />
                 <input type="submit" name="save" class="k-button" value="@T("Admin.Common.Save")" />
-            </td>
-        </tr>
-    </table>
-    
+            </div>
+        </div>
+    </div>
+    <p><br /></p>
 }

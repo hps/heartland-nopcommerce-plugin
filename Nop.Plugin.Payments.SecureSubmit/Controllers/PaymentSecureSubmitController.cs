@@ -11,6 +11,7 @@ using Nop.Services.Payments;
 using Nop.Services.Stores;
 using Nop.Web.Framework;
 using Nop.Web.Framework.Controllers;
+using Nop.Services;
 
 namespace Nop.Plugin.Payments.SecureSubmit.Controllers
 {
