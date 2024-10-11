@@ -1,3 +1,7 @@
+** This repository is no longer maintained. Please contact Heartland developer support with any questions **
+
+
+
 ## SecureSubmit nopCommerce Payment Gateway
 
 This extension allows nopCommerce to use the Heartland Payment Systems Gateway. All card data is tokenized using Heartland's SecureSubmit product.
